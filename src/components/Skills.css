@@ -1,0 +1,89 @@
+.skills-section {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 7rem 0;
+  position: relative;
+}
+
+#dark .skills-section {
+  background-color: #484148;
+}
+
+.ellipseShape {
+  position: absolute;
+  top: -6rem;
+  right: 28rem;
+}
+
+.skill-content {
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.skill-section-title {
+  color: #0a0a14;
+  font-weight: 500;
+  font-size: 4.8rem;
+  line-height: 5.8rem;
+}
+
+#dark .skill-section-title {
+  color: #f4f4f4;
+}
+
+.skill-imgs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.skill-img-box {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.skill-img-box img {
+  width: 120px;
+  height: 120px;
+  border-radius: 6px;
+}
+
+.skill-title {
+  color: #777777;
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+}
+
+#dark .skill-title {
+  color: #d9d9d9;
+}
+
+.rectangleShape-skills {
+  width: 181px;
+  height: 49px;
+  background-color: #525252;
+  border-radius: 4rem;
+  position: absolute;
+  left: -7.5rem;
+  bottom: 2rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .skill-img-box img {
+    width: 60px;
+    height: 60px;
+  }
+  .skill-title {
+    font-size: 1.4rem;
+  }
+}
