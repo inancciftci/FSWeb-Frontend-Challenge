@@ -28,8 +28,9 @@ body {
 /* LAYOUTS */
 
 .container {
-  max-width: 75vw;
+  max-width: 110rem;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .flex {
