@@ -28,7 +28,7 @@ body {
 /* LAYOUTS */
 
 .container {
-  max-width: 110rem;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 0 2rem;
 }

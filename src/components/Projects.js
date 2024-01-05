@@ -4,17 +4,17 @@ import "./Projects.css";
 import contextPhoto1 from "../assets/context-1.png";
 import contextPhoto2 from "../assets/context-2.png";
 
-export default function Projects({ context }) {
+export default function Projects({ content }) {
   return (
     <div className="projects-section">
       <div className="container projects-flex">
-        <h3 className="projects-title">{context && context.projects_title}</h3>
+        <h3 className="projects-title">{content && content.projects_title}</h3>
         <div className="projects-context">
           <div className="left-context">
             <h4 className="context-title">
-              {context && context.projects_left_title}
+              {content && content.projects_left_title}
             </h4>
-            <p className="context-p">{context && context.projects_left_p}</p>
+            <p className="context-p">{content && content.projects_left_p}</p>
             <div className="used-techs">
               <span className="tech">react</span>
               <span className="tech">vercel</span>
@@ -22,17 +22,17 @@ export default function Projects({ context }) {
               <span className="tech">router</span>
             </div>
             <div className="project-links">
-              <a href="#">{context && context.projects_link_1}</a>
-              <a href="#">{context && context.projects_link_2}</a>
+              <a href="#">{content && content.projects_link_1}</a>
+              <a href="#">{content && content.projects_link_2}</a>
             </div>
             <div className="img-placeholder-1"></div>
             <img src={contextPhoto1} alt="context" className="context-img" />
           </div>
           <div className="right-context">
             <h4 className="context-title">
-              {context && context.projects_right_title}
+              {content && content.projects_right_title}
             </h4>
-            <p className="context-p">{context && context.projects_right_p}</p>
+            <p className="context-p">{content && content.projects_right_p}</p>
             <div className="used-techs">
               <span className="tech">react</span>
               <span className="tech">redux</span>
@@ -41,8 +41,8 @@ export default function Projects({ context }) {
               <span className="tech">vercel</span>
             </div>
             <div className="project-links">
-              <a href="#">{context && context.projects_link_1}</a>
-              <a href="#">{context && context.projects_link_2}</a>
+              <a href="#">{content && content.projects_link_1}</a>
+              <a href="#">{content && content.projects_link_2}</a>
             </div>
             <div className="img-placeholder-2"></div>
             <img src={contextPhoto2} alt="context" className="context-img" />
@@ -52,11 +52,11 @@ export default function Projects({ context }) {
           <div className="bottom-left-context">
             <h3 className="left-context-title">
               <span className="shadow-bottom">
-                {context && context.footer_title_1}
+                {content && content.footer_title_1}
                 <div className="shadow-bottom-box"></div>
               </span>{" "}
               <br />
-              {context && context.footer_title_2}
+              {content && content.footer_title_2}
             </h3>
           </div>
           <div className="bottom-right-context">

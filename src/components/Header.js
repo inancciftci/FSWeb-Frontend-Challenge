@@ -1,41 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import "./Header.css";
 import ellipse10 from "../assets/Ellipse-10.png";
+import { ThemeContext } from "../context/ThemeContext";
+import { LangContext } from "../context/LangContext";
 
-const checkboxFromLocalStorage = JSON.parse(
-  localStorage.getItem("checkedValue") || "false"
-);
-
-const themeTextFromLocalStorage =
-  JSON.parse(localStorage.getItem("themeTextValue")) || "dark mode";
-
-export default function Header({ lang, setLang, setTheme }) {
-  const [themeText, setThemeText] = useState(themeTextFromLocalStorage);
-  const [checkedValue, setCheckedValue] = useState(checkboxFromLocalStorage);
-
-  useEffect(() => {
-    localStorage.setItem("checkedValue", JSON.stringify(checkedValue));
-    localStorage.setItem("themeTextValue", JSON.stringify(themeText));
-  }, [themeText, checkedValue]);
-
-  const checkboxBtnHandler = (e) => {
-    if (themeText === "dark mode") {
-      setThemeText("light mode");
-      setCheckedValue(true);
-      setTheme("dark");
-    } else {
-      setThemeText("dark mode");
-      setCheckedValue(false);
-      setTheme("light");
-    }
-  };
-  const langChangeHandler = (e) => {
-    if (lang === "tr") {
-      setLang("eng");
-    } else {
-      setLang("tr");
-    }
-  };
+export default function Header(props) {
+  const { themeText, checkedValue, changeTheme } = useContext(ThemeContext);
+  const { lang, changeLang } = useContext(LangContext);
   return (
     <div className="header">
       <div className="container flex flex-end header-right align-center">
@@ -47,9 +18,10 @@ export default function Header({ lang, setLang, setTheme }) {
               name="theme"
               id="theme"
               type="checkbox"
+              onChange={changeTheme}
               checked={checkedValue}
             />
-            <button onClick={checkboxBtnHandler} className="check"></button>
+            <button onClick={changeTheme} className="check"></button>
             {themeText}
           </label>
         </div>
@@ -58,7 +30,7 @@ export default function Header({ lang, setLang, setTheme }) {
         </div>
         <div className="header-lang">
           <p>
-            <button onClick={langChangeHandler} className="btn-span">
+            <button onClick={changeLang} className="btn-span">
               {lang === "tr" ? "English" : "Türkçe"}
             </button>
             {lang === "tr" ? " content" : " içerik"}

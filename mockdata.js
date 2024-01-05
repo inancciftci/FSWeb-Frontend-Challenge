@@ -1,4 +1,4 @@
-const trLang = [
+export const trLang = [
   {
     heroContent_Title: "Selam! 👋",
     heroContent_Context:
